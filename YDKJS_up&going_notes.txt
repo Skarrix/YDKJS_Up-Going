@@ -116,4 +116,25 @@ Values & Types
     Comparing "99.99" with 99.99, though similar = two different types. thus, 'loosely equal'
       Ex.
         If making  comparison "99.99"==99.99 JS will convert left (string) to 'number' equivalent, 99.99. Thus becomes 99.99==99.99, which is 'true'
-    This is 'implicit coercion', which JS will sometimes do to help you. Can cause bugs, but not if mechanism properly understood/learned 
+    This is 'implicit coercion', which JS will sometimes do to help you. Can cause bugs, but not if mechanism properly understood/learned
+
+Code Comments
+  Inserted for user use. Comp ignores.
+
+  Good code:
+    - Has comments
+    - not too many (ex. one per line = too much)
+    - Explains why not what. How optional if confusing
+
+  Styles:
+    // Single line comment - for above single statement or end of line. everything on line after // is treated as comment, no restrictions.
+      Ex.
+        var a=42;    // 42 is the meaning of life
+    /* Multi line comment */ - for several lines worth of explanation.
+      Ex.
+        /* The following value is used because it has bene shown that it answers every question in the univers. */
+        var a=42;
+    can appear anywhere on line, even in middle
+      Ex.
+        var a= /* arbitrary value*/ 42;
+        console.log(a);  // 42
