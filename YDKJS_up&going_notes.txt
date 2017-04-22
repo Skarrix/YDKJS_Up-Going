@@ -89,4 +89,31 @@ Operators
     - Logical: &&(and), ||(or)
       Ex. a||b selects either a or b
     Operators used to express compound conditionals, ex. if either a or b is true.
-    
+
+Values & Types
+  Types: Called 'primitive values' in JS. = different representations of value
+  - string, number, boolean, arrays, objects, functions, etc
+   Ex.
+    Math: number
+    Print value: string
+    Decision: boolean (true/false)
+   Literals = values included indirectly in source code
+    String literals: surrouned by ""(block quotes) or ''(single quotes)
+    Number literals ex; 42
+    Boolean literals ex; true
+
+  Converting Between Types
+    Coersion/coercing = converting from a value type to string or vice versa
+    Ex.
+      var a="42";
+      var b=Number(a);
+      console.log(a);    // "42"
+      console.log(b);   // 42
+     Where
+      Number(..) = explicit coercion from any type to 'number' type
+       Implicit coercion = compare two values of different type
+
+    Comparing "99.99" with 99.99, though similar = two different types. thus, 'loosely equal'
+      Ex.
+        If making  comparison "99.99"==99.99 JS will convert left (string) to 'number' equivalent, 99.99. Thus becomes 99.99==99.99, which is 'true'
+    This is 'implicit coercion', which JS will sometimes do to help you. Can cause bugs, but not if mechanism properly understood/learned 
