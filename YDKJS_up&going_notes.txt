@@ -49,3 +49,44 @@ Practice on Dev Console
       console.log(age) = outputs variable stored in age
       prompt(..) = creates pop-up prompt to enter variable
       "Please tell me your age:" = message printed in popup
+
+Operators
+  Perform actions on variables and values
+    * is multiplication
+    = is assignment. takes right (source value) & put into variable on left (target variable), ex a=42
+
+    Ex
+      a=2;
+      b=a+1;
+     Where
+      2 assigned to a value
+      then get value of a add one
+      get value 3 and store in b
+       or: b is a-value plus one
+
+    var = keyword, declares (creates) variables
+      always declare by name before using.
+      only need declare once for each 'scope'
+        Ex. var a=20;
+            a = a+1;
+            a = a*2;
+            console.log(a);   //42
+
+  JS common operators
+    - Assignment: =
+    - Math: +(add), -(subt), *(mult), /(div)
+    - Compound Assignment: +=, -=, *=, /= (combines math operation with assignment, ex 1 +=2 same as a=a+2)
+    - Increment/Decrement: ++(increment), --(decrement), ex. a++ similar to a=a+1
+    - Object Property Access: . as in console.log()
+      objects = values holding other values at 'properties'
+      propterties = specific namedlocations.
+       Ex. obj.a = object value called 'obj' with property name 'a'
+       properties also accesable as obj["a"]
+    - Equality: ==(loose-equals), ===(strict-equals), !=(loose not-equals), !==(strict not-equals)
+      Ex. a==b
+    - Comparison: <(less than), >(greater than), <=(less than or loose-equals), >=(greater than or loose-equals)
+      Ex. a<=b
+    - Logical: &&(and), ||(or)
+      Ex. a||b selects either a or b
+    Operators used to express compound conditionals, ex. if either a or b is true.
+    
