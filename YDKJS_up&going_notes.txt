@@ -24,4 +24,28 @@ Code
 Compiler/Interpreter: runs/executes/compiles code into commands
   Interpreting code: top to bottom, line by line, each time program runs
   Compiling: translation done ahead of time
-  
+
+Practice on Dev Console
+
+  Output
+    a=21;
+    b=a*2;
+    console.log(b);
+   Where
+      console.log(..) = print text (aka output) to user
+      log(b) = Function (log=print to console)
+      console. = object reference where log(..) is located
+   Another Output ex
+      alert(..);
+
+  Input
+    most common: form elements (txt boxes) for user to type into, Js then used to read values into programs variables.
+    Alternatively: promt(..) function
+      age = prompt("Please tell me your age:");
+      console.log(age);
+      29
+     Where
+      age = variable where input is stored
+      console.log(age) = outputs variable stored in age
+      prompt(..) = creates pop-up prompt to enter variable
+      "Please tell me your age:" = message printed in popup
