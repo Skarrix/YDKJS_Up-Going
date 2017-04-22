@@ -1,0 +1,27 @@
+Ch1 quick overview of what you'll want to learn+practice to get into programming
+
+Code
+  Language=syntax. code=set of instructions in a given language.
+  Saved in txt file.
+
+  Statement: group of words/numbers/operators performing specific task.
+             Conclude with ;
+             Made up of 1 or more Expressions
+  a=b*2; where a/b = variables, 2 = literal value (stands alone), =/* = operators.
+
+  Variables: holds values
+
+  Operators: Performs actions with values and variables
+
+  Expressions: a reference to variable or value, or set thereof, combined    with         operators.
+              For a = b * 2
+              2 = literal value expression
+              b = variable expression (retrieve current value)
+              b * 2 = arithmetic expression (execute multiplication), also 'expression statement' (stands alone, not useful bc does nothing with output)
+              a = b * 2 = assignment expression (assign result of b*2 exp to variable a)
+              alert( a ); = call expression statement
+
+Compiler/Interpreter: runs/executes/compiles code into commands
+  Interpreting code: top to bottom, line by line, each time program runs
+  Compiling: translation done ahead of time
+  
