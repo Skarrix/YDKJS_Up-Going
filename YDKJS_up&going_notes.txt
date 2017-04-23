@@ -208,3 +208,43 @@ Blocks
     is attached to if(amount>10);
     thus statement only processed if conditional passes
   - block statement {..} does not need ; to conclude
+
+Conditionals
+  Decisions in your program
+   Ex. If. = If this condition is true, do  following.
+    var bank_balance=302.13;
+    var amount=99.99;
+    if (amount<bank_balance) {
+        console.log("I want to buy this phone!");
+    }
+   Where
+    (..) requires expression that can be either true or false. ie amount<bank_balance either is or isn't larger
+
+  'Else' clause can be alternative if condition not true
+   Ex.
+    const ACCESSORY_PRICE=9.99;
+    var bank_balance=302.13
+    var amount=99.99;
+    amount=amount*2;
+    // can we afford the extra purchase?
+    if (amount<bank_balance) {
+        connsole.log("I'll take the accessory!");
+        amount=amount+ACCESSORY_PRICE;
+    }
+    //otherwise
+    else {
+        console.log("No thanks.");
+    }
+   Where
+    if amount<bank_balance is tue, "I'll take accessory!" will print and add 9.99 to amount variable.
+    if false, else clause instructs to respond "No thanks" and amount remains unchanged.
+  if statement expects boolean value, if given something that is not, will coerce
+
+  JS defines list of values considered either "truthy" or "falsy"
+    falsy: when coerced to boolean, become false. incl. 0 and ""
+    truthy: if not falsy is automatically truthy.becomes true when coerced to boolean. incl 99.99 and "free"
+
+  Other conditionals:
+    - switch: shorthand for series of if..else statements
+    Loops use conditional to determine if loop should continue or stop
+    
