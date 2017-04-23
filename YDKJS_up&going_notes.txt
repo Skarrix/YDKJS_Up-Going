@@ -247,4 +247,60 @@ Conditionals
   Other conditionals:
     - switch: shorthand for series of if..else statements
     Loops use conditional to determine if loop should continue or stop
-    
+
+Loops
+  Job is to keep repeating set of actions as long as condition holds
+  Includes test condition as well as block{..}
+    Iteration = each time loop block executes
+     Ex.
+      while (numOfCustomers>0) {
+          console.log("How may I help you?");
+          //help the customer...
+          numOfCustomers=numOfCustomers-1;
+      }
+      //versus:
+      do {
+          console.log("How may I help you?");
+          //helt the customer...
+          numOfCustomers=numOfCustomers=1;
+      } while(numOfcustomers>0)
+     Where
+      Only difference is whether conditional is tested before or after first iteration. (while)/(do..while)
+      In either case if conditional tests false next iteration will not run.
+      If initial condition false, 'while' loop will never run but do..while loop will run just first time.
+
+    Languages almost always count from 0 up, not 1. Replace value 0 with i when wanting to count numbers
+
+    conditional tested on each iteration, as if there is implied 'if' statement in loop
+
+    Break statement used to stop loop.
+      Ex.
+        var i=0;
+        // a 'while true' loop will run forever, right?
+        while (true) {
+            //stop the loop?
+            if ((i<=9) ===false) {
+                break;
+          }
+          console.log(i);i=i+1;
+        }
+        // 0 1 2 3 4 5 6 7 8 9
+       ^not practical approach
+
+    while or do..while can accomplish task manually,
+    'for' loop is made for this purpose
+      Ex.
+        for (var i=0; i<=9; i=i+1) {
+            console.log(i);
+        }
+        // 0 1 2 3 4 5 6 7 8 9
+       Where
+        i<=9 true for 1st 10 iterations (i values 0 through 9)
+        becomes false  once i=10
+      for loop 3 clauses
+        - initial clause (var i=0)
+        - conditional test clause (i<=9)
+        - update clause (i=i+1)
+      Thus 'for' more compact & easier to understand & write
+     Other specialized loop forms exist to iterate over specific values, ex. properties of object, but "loop until condition fails" holds for all loops regardless of form.
+      
