@@ -138,3 +138,49 @@ Code Comments
       Ex.
         var a= /* arbitrary value*/ 42;
         console.log(a);  // 42
+
+Variables
+  Variables needed because operations change constantly over course of program. 'Variable' can vary over time as needed
+  Variable is container
+
+  Primary purpose: managing program State
+    State: tracks changes to values as program runs.
+  Alternate purpose: declare constant, if you do not mean for variable to change.
+
+  - Static typing/Static enforcement: Some languages declare specific 'type' of value, ex. 'number' or 'string'. prevents unintended conversion
+  - Weak typing/dynamic typing: emphasize types of values instead of variables. Allows variable to hold any kind of value type at any time.
+  Benefit to flexibility. Single variable can represent a value regardless of what type form it takes at any given poing in program's logic flow. JS works like this.
+    Ex.
+      var amount=99.99;
+      amount=amount*2;
+      console.log(amount);    //199.98
+      //convert 'amount' to a string, and add "$"+String(amount);
+      amount="$"+String(amount);
+      console.log(amount;)   // "$199.98"
+     Where
+      - variable starts out with number 99.99, then 99.99*2(188.98)
+      - First console.log(..) Implicitly coerces number value to string
+      - String(amount) Explicitly coerces number value to string, so 2nd console.log(..) statement does not coerce for printout
+
+  Constants:
+    - if value is not meant to change
+    - declared at top of program, in one place
+    - declare with capitals and _ between words
+      Ex.
+        var TAX_RATE=0.08;    //8% sales tax
+        var amount = 99.99;
+        amount=amount*2;
+        amount=amount+(amount*TAX_RATE);
+        console.log(amount);  // 215.9784
+        console.log(amount.toFixed(2));   // "215.98"
+       Where
+        toFixed(..) = specify how many decimal places to round to
+                      funtion to be accessed on 'number' values
+        TAX_RATE = only constant by convention, nothing in program preventsvariable from being changed, but because in one place is easy to change for program should for ex tax increase, instead of searching out multiple instances throughout.
+
+    ES6 includes new way to declare constants, using 'const' instead of 'var'
+      Ex.
+       const TAX_RATE=0.08;
+       var amount=99.99;
+    As useful as variables, but in addition prevents accidentally changing value somewhere else after initial setting.
+      Ex. trying to assign different value to TAX_RATE after initial declaration would be rejected (failing with error in strict mode)
