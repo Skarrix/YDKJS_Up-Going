@@ -2,21 +2,45 @@
 -------------YDKJS Up&Going----------------
 
 Statement
+  ;
 
 Expression
+  a=b*2
 
 Operators
+  =
+  +, -, *, /
+  +=, -=, *=, /= (combines math operation with assignment, ex 1 +=2 same as a=a+2)
+  ++(increment), --(decrement), ex. a++ similar to a=a+1
+  .
+  ==, ===, !=, !==
+  <, >, <=, =>
+  &&, ||
+
+Objects
+  values holding other values at 'properties'
+
+Properties
+  specific named locations
 
 Values&types
+  string, number, boolean, arrays, objects, functions, etc
 
 Variables
+  var
+  const
 
 Blocks
+ {..}
+ Series of statements
 
-Conditionals
+Conditionals / control statements
+  if
+  else
 
 Loops
-
+  includes test condition () and block {}
+  
 Functions
 
 Scope
