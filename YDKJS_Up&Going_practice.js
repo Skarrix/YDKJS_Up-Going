@@ -22,16 +22,17 @@ function buyAccessory() {
 }
 
 function addTax(amount) {
-  amount = amount + (amount * TAX_RATE); //adds tax
+  return amount * TAX_RATE;
+  console.log(amount.toFixed(2));
 }
 
-function printAmount() {
-  function calculatePurchaseamount() {
-    amount = numOfPhones + numOfAccessories;
-    addTax();
+function printAmount(amount) {
+  function calculatePurchaseamount(amount) {
+    numberOfItems = numOfPhones + numOfAccessories;
+    addTax(amount);
     console.log(amount.toFixed(2));
   }
-  function formatAmount() {
+  function formatAmount(amount) {
     amount = "$" + String(amount);
     console.log(amount.toFixed(2)); //for decimal rounding
   }
@@ -39,9 +40,9 @@ function printAmount() {
 
 while (bank_balance > amount) {
   buyPhone();
-  calculatePurchaseamount();
+  printAmount (amount);
   }
 while (SPENDING > amount) {
   buyAccessory();
-  calculatePurchaseamount();
+  printAmount (amount);
 }
