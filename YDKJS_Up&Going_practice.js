@@ -14,6 +14,7 @@ function buyPhone() {
   amount = amount + PHONE_PRICE;
   numOfPhones = numOfPhones + 1;
   console.log("Number of Phones:" + numOfPhones);
+  console.log("Balance:" + amount);
 }
 
 function buyAccessory() {
@@ -21,6 +22,7 @@ function buyAccessory() {
   amount = amount + ACCESSORY_PRICE;
   numOfAccessories = numOfAccessories + 1;
   console.log("Number of Accessories:" + numOfAccessories);
+  console.log("Balance:" + amount);
 }
 
 function addTax(amount) {
@@ -28,27 +30,32 @@ function addTax(amount) {
   console.log(amount.toFixed(2));
 }
 
-function printAmount(amount) {
-  function calculatePurchaseamount(amount) {
-    phonePrice = numOfPhones * PHONE_PRICE;
-    accessoryPrice = numOfAccessories * ACCESSORY_PRICE;
-    amount = numOfPhones + numOfAccessories;
-    addTax(amount);
-    console.log(amount.toFixed(2));
-  }
+function calculatePurchaseamount(amount) {
+  phonePrice = numOfPhones * PHONE_PRICE;
+  accessoryPrice = numOfAccessories * ACCESSORY_PRICE;
+  amount = numOfPhones + numOfAccessories;
+  addTax(amount);
+  amount = Number(amount); //coerce to number value
+  console.log(amount.toFixed(2));
+}
 
-  function formatAmount(amount) {
-    amount = "$" + String(amount);
-    console.log(amount.toFixed(2));
-  }
+function formatAmount(amount) {
+  amount = "$" + String(amount);
+  //console.log(amount.toFixed(2));
+}
+
+function printAmount(amount) {
+  calculatePurchaseamount(amount);
+  formatAmount(amount);
   console.log(amount)
 }
 
 while (bank_balance > amount) {
   buyPhone();
-  if (SPENDING > amount) {
+    if (SPENDING > amount) {
     buyAccessory();
   }
+  printAmount();
 }
 console.log("Your purchase:" + printAmount(amount));
 
