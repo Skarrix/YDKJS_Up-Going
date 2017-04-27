@@ -6,6 +6,8 @@ const SPENDING = prompt("What's your spending threshold?");
 var amount = 0;
 var numOfPhones = 0;
 var numOfAccessories = 0;
+var phonePrice = 0;
+var accessoryPrice = 0;
 
 function buyPhone() {
   console.log("I want to buy this phone.");
@@ -28,7 +30,9 @@ function addTax(amount) {
 
 function printAmount(amount) {
   function calculatePurchaseamount(amount) {
-    numberOfItems = numOfPhones + numOfAccessories;
+    phonePrice = numOfPhones * PHONE_PRICE;
+    accessoryPrice = numOfAccessories * ACCESSORY_PRICE;
+    amount = numOfPhones + numOfAccessories;
     addTax(amount);
     console.log(amount.toFixed(2));
   }
@@ -36,6 +40,7 @@ function printAmount(amount) {
     amount = "$" + String(amount);
     console.log(amount.toFixed(2)); //for decimal rounding
   }
+  console.log(amount)
 }
 
 while (bank_balance > amount) {
