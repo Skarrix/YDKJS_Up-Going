@@ -10,17 +10,17 @@ var phonePrice = 0;
 var accessoryPrice = 0;
 
 function buyPhone() {
-  console.log("I want to buy this phone.");
+  console.log("I want to buy the phone.");
   amount = amount + PHONE_PRICE;
   numOfPhones = numOfPhones + 1;
-  console.log(numOfPhones);
+  console.log("Number of Phones:" + numOfPhones);
 }
 
 function buyAccessory() {
   console.log("I'll take the accessory.");
   amount = amount + ACCESSORY_PRICE;
   numOfAccessories = numOfAccessories + 1;
-  console.log(numOfAccessories);
+  console.log("Number of Accessories:" + numOfAccessories);
 }
 
 function addTax(amount) {
@@ -36,18 +36,22 @@ function printAmount(amount) {
     addTax(amount);
     console.log(amount.toFixed(2));
   }
+
   function formatAmount(amount) {
     amount = "$" + String(amount);
-    console.log(amount.toFixed(2)); //for decimal rounding
+    console.log(amount.toFixed(2));
   }
   console.log(amount)
 }
 
 while (bank_balance > amount) {
   buyPhone();
-  printAmount (amount);
+  if (SPENDING > amount) {
+    buyAccessory();
   }
-while (SPENDING > amount) {
-  buyAccessory();
-  printAmount (amount);
+}
+console.log("Your purchase:" + printAmount(amount));
+
+if (amount > bank_balance) {
+  console.log("You can't afford another purchase.");
 }
