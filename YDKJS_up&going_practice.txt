@@ -1,8 +1,25 @@
-a=b*2;
+Total price of phone purchase
+mutliple purchases (incl accessories) until out of money -loop
+add tax after purchase calculations, print out formatted
+check amount against bank balance for affordability
 
-a=21;
-b=a*2;
-console.log(b);
+constants
+  -tax rate
+  - phone price
+  - accessory price
+  - spending threshold
+  - bank account balance
 
-In Dev Console
-  console.log(..) = print text (aka output) to user
+functions
+ - calc tax
+ - formatting $ + rounding
+
+Input with prompt(..) bank balance
+
+
+-------------------------------------------------------------
+
+while bank balance > than phone price, buy phone
+while total amount > spending threshold buy accessory
+ - calculate total purchase (inc tax) after each iteratoin
+ - print after each iteration
