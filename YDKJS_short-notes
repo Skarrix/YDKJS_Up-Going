@@ -50,6 +50,9 @@ Loops
   includes test condition () and block {}
 
 Functions
+  For code to be reused/'called' multiple times
+  or
+  Organization, to make logic clearer by collecting related code in named locations
                             Ex. function printAmount(amt) -given parameter
                                 function formatAmount()   -returns value
 Parameter
@@ -58,3 +61,5 @@ Parameter
                               where amt is parameter
 
 Scope
+  Lexical scope. That which is domain of a function
+  Can only access functions within scope, or when nested within its own and any outer scope

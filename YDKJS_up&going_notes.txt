@@ -346,3 +346,55 @@ Functions
       console.log(amount.toFixed(2));
      Where
       calculateFinalPurchaseAmount(..) only called once, but makes logic of final statement (amount=calculateFinal..) cleaner
+
+Scope
+  aka Lexical Scope
+  - in JS all functions gets own scope
+  - = Collection of variables + rules for how said variables accessed by name.
+  - Only code inside function can access said function's 'scoped' variables
+  - Variable name has to be unique within same scope, but same name can appear in different scopes
+    Ex.
+      function one() {
+      //this 'a' only belongs to the 'one()' function
+      var a=1;
+      console.log(a);
+      }
+      function two() {
+      //this 'a' only belongs to the 'two()' function
+      var a=2;
+      console.log(a);
+      }
+      one();    // 1
+      two();    // 2
+     Where
+      Can't access a=1 in function two(); it's scope is only within {} thus its a=2 only
+
+    - Scope can be nested in another scope
+      where nested scope can access code inside either scope
+      Ex.
+        function outer() {
+            var a=1;
+            function inner() {
+                var b=2;
+                //we can access both 'a' and 'b' here
+                console.log(a+b);  //3
+        }
+            inner();
+            //we can only access 'a' here
+            console.log(a);    //1
+        }
+        outer();
+  - code in one scope can access variables in either scope outside of it
+      Thus
+        code inside inner() has access to both a and b
+        code inside outer() only has access to a, not b because b variable only inside inner()
+      Ex.
+        const TAX_RATE=0.08;
+        function calculateFinalPurchaseAmount(amt) {
+        // calculate the new amoutn with the tax
+        amt=amt+(amt*TAX_RATE);
+        // return the new amount
+        return amt;
+        }
+       Where
+        TAX_RATE constant (var) is accesable from inside calculateFinalPurchaseAmount(..) funnction, even though unpassed
