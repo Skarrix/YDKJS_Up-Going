@@ -303,4 +303,46 @@ Loops
         - update clause (i=i+1)
       Thus 'for' more compact & easier to understand & write
      Other specialized loop forms exist to iterate over specific values, ex. properties of object, but "loop until condition fails" holds for all loops regardless of form.
-      
+
+Functions
+  Section of code that can be 'called' to be repeated. aka reusable piece
+    Ex.
+      fucntion printAmount() {
+          console.log(amount.toFixed(2));
+      }
+      var amount=99.99;
+      printAmount();   // "99.99"
+      amount=amount*2;
+      printAmount();   // "199.98"
+    or
+      function printAmount(amt) {
+          console.log(amt.toFixed(2));
+      }
+      function formatAmount() {
+          return "$"+amount.toFixed(2));
+      }
+      var amount=99.99;
+      printAmount(amount*2);    //"199.98"
+      amount=formatAmount();
+      console.log(amount);      //"$99.99"
+     Where
+      function printAmount(..) takes parameter called 'amt'
+      function formatAmount() returns value
+        -can also be combined
+    Parameter:
+      of a function. ex. amt in printAmount(amt)
+
+  Used for code that will be called multiple times
+  or useful for organizing related bits of code in named locations, even if only called once.
+    Ex.
+      const TAX_RATE=0.08;
+      function calculateFinalPurchaseAmount(amt) {
+      //calculate the new amount with the tax
+      amt=amt+(amt*TAX_RATE);
+      return amt;
+      }
+      var amount=99.99;
+      amount=calculatePurchaseAmount(amount);
+      console.log(amount.toFixed(2));
+     Where
+      calculateFinalPurchaseAmount(..) only called once, but makes logic of final statement (amount=calculateFinal..) cleaner
