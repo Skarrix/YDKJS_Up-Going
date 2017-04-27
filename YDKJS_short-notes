@@ -19,9 +19,17 @@ Operators
 
 Objects
   values holding other values at 'properties'
+  expresses compound conditionals
+                              Ex. console.log()
+
 
 Properties
   specific named locations
+                              Ex. obj.a
+                                object value called 'obj' with property name 'a'
+
+Argument (parameters)
+  passes values
 
 Values&types
   string, number, boolean, arrays, objects, functions, etc
@@ -40,7 +48,13 @@ Conditionals / control statements
 
 Loops
   includes test condition () and block {}
-  
+
 Functions
+                            Ex. function printAmount(amt) -given parameter
+                                function formatAmount()   -returns value
+Parameter
+  of a function
+                            Ex.  function printAmount(amt){}
+                              where amt is parameter
 
 Scope
