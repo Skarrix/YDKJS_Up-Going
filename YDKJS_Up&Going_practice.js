@@ -25,10 +25,10 @@ function buyAccessory() {
   console.log("Balance:" + amount);
 }
 
-function addTax(amount) {
-  return amount * TAX_RATE;
-  console.log(amount.toFixed(2));
-}
+function addTax() {
+    amount = amount + amount * TAX_RATE;
+    //console.log(amount.toFixed(2));
+    }
 
 function calculatePurchaseamount(amount) {
   phonePrice = numOfPhones * PHONE_PRICE;
@@ -44,7 +44,7 @@ function formatAmount(amount) {
   //console.log(amount.toFixed(2));
 }
 
-function printAmount(amount) {
+function printAmount() {
   calculatePurchaseamount(amount);
   formatAmount(amount);
   console.log(amount)
@@ -57,7 +57,7 @@ while (bank_balance > amount) {
   }
   printAmount();
 }
-console.log("Your purchase:" + printAmount(amount));
+//console.log("Your purchase:" + printAmount(amount));
 
 if (amount > bank_balance) {
   console.log("You can't afford another purchase.");
