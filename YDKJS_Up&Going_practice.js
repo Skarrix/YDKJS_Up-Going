@@ -50,7 +50,7 @@ function printAmount() {
     buyAccessory();
   }
   printAmount();
-}*/ //alternative apporach
+}*/ // <----- alternative apporach
 
 do {
   buyPhone();

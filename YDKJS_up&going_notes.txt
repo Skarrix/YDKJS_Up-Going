@@ -398,3 +398,13 @@ Scope
         }
        Where
         TAX_RATE constant (var) is accesable from inside calculateFinalPurchaseAmount(..) funnction, even though unpassed
+
+Review
+  Operators: perform actions on values
+  Values&types: to perform different kinds of actions
+  Variables: store data (state) during execution.
+  Conditionals: make decisions
+  loops: repeat tasks
+  functions: organize into logical and reusable chunks.
+
+Code comments for writing more readable, understandable and useable code.
