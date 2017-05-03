@@ -521,3 +521,14 @@ Objects
      ```
     Where
      implies it can have properties, but typically will only use function obj properties in limited cases
+
+Built-In Type Methods
+  ```javascript
+  var a = "hello world";
+  var b = 3.14159;
+  a.length;        // 11
+  a.toUpperCase(); //"HELLO WORLD"
+  b.toFixed(4);    // "3.1416"
+  ```
+ Where
+  "hello world" is primitive `string` type, wrapped by `String` object created through toUpperCase()
