@@ -78,3 +78,17 @@ Types:
   - object
   - symbol
  typeof operator used to see what value is held
+
+  Objects:
+    Compound value where properties (named locations) can be set,
+    Each holds own values of any type
+      Ex. obj
+    +----++----++----++----++----++----+
+    | a: "hello world"| b: 42 | c: true |
+    +----++----++----++----++----++----+
+    Obj. accessed by . notation  ``obj.a;``
+                  or [bracket]   ``obj["a"]``
+    Keys: Properties accessed in bracket notation, ex 'a' above
+  Obj. sub-types:
+  - arrays: holds numerically indexed values Ex. obj[1]
+  - functions

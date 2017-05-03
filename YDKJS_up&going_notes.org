@@ -415,6 +415,8 @@ Code comments for writing more readable, understandable and useable code.
 # Chapter 2 - Into JS
  Overview of topics covered in rest of YDKJS books
 
+# Values & Types
+
 JS has typed values, not variables.
 
   Built-in types:
@@ -435,4 +437,87 @@ JS has typed values, not variables.
   - "Undefined" type reached in variety of ways, including undeclared
     variable, functions that return no value, or usage of ``void`` operator
 
-  
+Objects
+ Refers to compound value where properties (named locations) can be set, each holding own values of any type.
+  Ex.
+    ```javascript
+    var obj = {
+      a: "hello world",
+      b: 42,
+      c: true
+    };
+    obj.a;  //"hello world"
+    obj.b;  //42
+    obj.c;  //true
+    obj["a"]; //"hello world"
+    obj["b"]; //42
+    obj["c"]; //true
+    ```
+   Where
+    obj
+    +----++----++----++----++----++----+
+    | a: "hello world"| b: 42 | c: true |
+    +----++----++----++----++----++----+
+
+  - Properties accessed by dot notation (obj.a) or bracket notation (obb["a"]).
+  - Dot notation preferred for brevity and readability.
+
+ [Bracket] notation:
+  - Useful if property name contains special characters Ex.
+      obj["hello world"] -- aka keys (properties accessed by bracket not).
+  - requires either variable or string 'literal', wrapped in ".." or '..'
+  - useful for accessing property/key but name is stored in another var
+      Ex.
+        ```javascript
+        var obj = {
+          a: "hello world",
+          b: 42
+        };
+        var b = "a";
+        obj[b];      //"hello world"
+        obj["b"];   // 42
+        ```
+  Other value types:
+    - array
+    - functions
+      ^ More correctly a sub-type of 'object' type.
+
+  Array:
+    'object' that holds values not in keys but numerically indexed positions
+      Ex.
+        ```javascript
+        var arr = [
+        "hello word",
+        42,
+        true
+        ];
+        arr[0];        // "hello world"
+        arr[1];        // 42
+        arr[2];        // true
+        arr.length;    // "object"
+        typeof arr;    // "object"
+        ```
+       Where
+         arr
+         +----++----++----++----++----++----+
+         | 0: "hello world"| 1: 42 | 2: true |
+         +----++----++----++----++----++----+
+     - special objects, can also have properties, incl updated 'length'
+      property.
+    - Array can be used as normal object with own name properties,
+    - or use `object` and give nomeric properties (0,1,) <- improper usage
+    - best use: for numerically positioned values, vs `object` for named properties.
+
+  Functions:
+     ```javascript
+     function foo() {
+           return 42;
+     }
+     foo.bar = "hello world";
+
+     typeof foo;    // "function"
+     typeof foo();  // "number"
+     typeof foo.bar; // "string"
+     ```
+    Where
+     implies it can have properties, but typically will only use function obj properties in limited cases
