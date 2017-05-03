@@ -1,4 +1,5 @@
-Ch1 quick overview of what you'll want to learn+practice to get into programming
+#Ch1
+quick overview of what you'll want to learn+practice to get into programming
 
 Code
   Language=syntax. code=set of instructions in a given language.
@@ -408,3 +409,30 @@ Review
   functions: organize into logical and reusable chunks.
 
 Code comments for writing more readable, understandable and useable code.
+
+------------------------------------------------------------------------
+
+# Chapter 2 - Into JS
+ Overview of topics covered in rest of YDKJS books
+
+JS has typed values, not variables.
+
+  Built-in types:
+      - string   ---  a="Hello world";
+      - number   ---  a=42;
+      - boolean   ---  a=true;
+      - null & undefined   ---  var a;
+      - object   ---  a={b:"c"};
+      - symbol   ---
+
+  ```typeof``` operator can examine value and tell you which type it is.
+  - answer always in 'string'
+  - ``typeof a`` does not return type of a but rather type of variable
+    held by a.
+  - only values have types in JS, variables just container.
+  - ``a=null;  typeof a; returns "object" --longstanding bug now commonly
+    employed.
+  - "Undefined" type reached in variety of ways, including undeclared
+    variable, functions that return no value, or usage of ``void`` operator
+
+  

@@ -1,5 +1,6 @@
 
 -------------YDKJS Up&Going----------------
+# Chapter 1
 
 Statement
   ;
@@ -63,3 +64,17 @@ Parameter
 Scope
   Lexical scope. That which is domain of a function
   Can only access functions within scope, or when nested within its own and any outer scope
+
+
+# Chapter 2
+
+JS has typed values, not variables.
+
+Types:
+  - string
+  - number
+  - boolean
+  - null and Undefined
+  - object
+  - symbol
+ typeof operator used to see what value is held
