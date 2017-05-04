@@ -531,4 +531,116 @@ Built-In Type Methods
   b.toFixed(4);    // "3.1416"
   ```
  Where
-  "hello world" is primitive `string` type, wrapped by `String` object created through toUpperCase()
+  "hello world" is primitive `string` type, wrapped by native `String` object created through toUpperCase()
+  string value wrapped by String object, number value by Number object, etc
+
+Comparing Values
+  Two types:
+    - Equality
+    - Inequality
+  - result is boolean, regardless of value types compared
+
+  Coercion:
+    - explicit - can see from code conversion will take place
+      Ex.
+        ```javascript
+        var a = "42";
+        var b = Number(a);
+        a;   // "42"
+        b; // 42 -- the number
+        ```
+    - implicit - non-obvious side-effect of operation
+      Ex.
+        ```javascript
+        var a = "42";
+        var b = a * 1;  //"42" implicitly coerced to 42
+        a;    // "42"
+        b;   // 42 -- the number
+        ```
+    Truthy & Falsy
+      - when non-boolean value is coerced to boolean, becomes either truthy or falsy
+      Falsy:
+        - "" (empty string)
+        - 0, -0. NaN (invaid number)
+        - null, undefined
+        - false
+      Truthy:
+        - any value not 'falsy'
+        - "hello"
+        - 42
+        - true
+        - [], [1, "2", 3] (arrays)
+        - {}, {a: 42} (objects)
+        - function.foo() {..} (functions)
+      Only relevant when coerced to boolean
+
+  Equality
+    Four equality operators
+      - ==     - checks for value equality with coercion allowed
+      - ===    - checks value equality without coercion allowed (strict eq)
+        Ex.
+          ```javascript
+          var a = "42";
+          var b = 42;
+          a == b;  // true
+          a === b; // false
+          ```
+         Where
+          a==b - JS notices types not match, coerces one or both values unntil types match, then value equality checked.
+          a===b - false because coercion not allowed, different types =/=
+      - !=   pairs with ==    -: ! not equal
+      - !==  pairs with ===   -:
+     non-equality =/= inequality
+
+      Choosing == or ===
+        - if either value/side in comparison could be true or false value, use ===
+        - if either value in comparison could be of these specific values (0, "", [] -- empty array), use ===
+        - in all other cases, use ==
+       These rules require you to think critically of what values can come through variables that get compared for equality.
+        - Certain of vuales and == is safe, use it.
+        - If uncertain, use ===
+       Same applies for !=, !==
+       For non- primitive values (obj., function, array) take special note of ==, ===. These values held by reference, comparisons simply check if references match, not anything involving underlying values.
+        Ex. arrays default coerced to string by simply joining all values with commas in-between. two arrays with same contents is not ==
+          ```javascript
+          var a = [1,2,3];
+          var b = [1,2,3];
+          var c = "1,2,3"
+          a == c;  // true
+          b == c;  // true
+          a == b;  // false
+          ```
+  Inequality
+    Relational comparison
+    - <
+    - >
+    - <=
+    - >=
+    Usually used with comparable values, like numbers.
+    String values also comparable for inequality, using alphabetical rules
+      Ex. "bar" < "foo"
+    Coercion: similar rules as == apply. no strict inequality that disallows coersion.
+      Ex.
+        ```javascript
+        var a = 41;
+        var b = "42";
+        var c = "43";
+        a < b;  // true
+        b < c;  // true
+        ```
+       Where
+        if number and string, coerced to number
+        if both string, comparison lexicographical (alphabetical)
+      When one value cannot be made into valid number
+        Ex.
+        ```javascript
+        var a = 42;
+        var b = "foo";
+        a < b;   // false
+        a > b;   // false
+        a == b;  // false
+        ```
+       Where
+        b is coerced to 'invalid number value' NaN
+        NaN neither > nor < any other value
+        == fails because 42 == NaN

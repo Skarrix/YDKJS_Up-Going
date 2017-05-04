@@ -92,3 +92,27 @@ Types:
   Obj. sub-types:
   - arrays: holds numerically indexed values Ex. obj[1]
   - functions
+
+  Comparing Values
+    Two types:
+      - Equality
+      - Inequality
+    - result is boolean, regardless of value types compared
+
+    Coercion
+      - Explicit
+      - Implicit
+
+    Truthy & Falsy
+      non-boolean implicitly coerced to boolean becomes truthy/falsy
+      falsy: "", 0, -0, NaN, null, undefined, false
+      truthy: everything else
+
+    Equality
+      - ==, ===, !=, !==
+      Use == if certain of values, === if true/false is value or if value is uncertain.
+
+    Inequality
+      - >, <, <=, >=
+      coercion same rules as ==, no ===
+      used with numbers usually. number + string -> all coerced to number 
