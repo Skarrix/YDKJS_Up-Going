@@ -115,4 +115,26 @@ Types:
     Inequality
       - >, <, <=, >=
       coercion same rules as ==, no ===
-      used with numbers usually. number + string -> all coerced to number 
+      used with numbers usually. number + string -> all coerced to number
+
+
+Variables
+  Valid identifiers:
+    - A-Z, a-z, $, _, 0-9
+  Reserve words
+    - for, in, if
+    - true, false, null
+
+  Function Scopes
+   Var keyword declares variable for current scope, or global scope if declared at top level outside function
+
+    Hoisting:
+      Hoisting: when var declaration conceptually moved to top of enclosing scope.
+
+    Nested scopes
+     var accessable anywhere in scope and every level upward, but now downward
+     ReferenceError: when trying to access value not available in scope
+
+     Setting undeclared var creates global scope variable -> poor practice.
+
+     'let' keyword: declares variable usable only within block{}, thus not to higher functions if nested.
