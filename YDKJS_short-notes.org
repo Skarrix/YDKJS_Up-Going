@@ -143,11 +143,15 @@ Variables
 Conditionals
   - if/else
   - switch statement: less verbose altternative for if..else..if
-      ```javascript
       switch (a) {
         case 2:
         case 10:
           // do something
           break;
-      ```
+
       - "fall through": ommitting 'break' either case runs
+
+
+Strict Mode
+  Stricter rules. Better for optimization
+  Always use.
