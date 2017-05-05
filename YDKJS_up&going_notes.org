@@ -818,3 +818,43 @@ Conditionals
            Where
             test expression, 'a>41' evaluates true, first clause "hello" results, otherwise second clause "world" results, and result assigned to 'b'
           Conditional operator doesn't have to be used in assignment, but is most common.
+
+
+Strict Mode
+  Tightens rules for certain behaviours.
+  Restrictions seen as keeping code to safer and more appropriate set of guidelines.
+  Adhering to strict mode makes engine more optimizable by engine
+  - Use for all programs
+  - can opt in to strict mode for individual funnction or entire file dependant on where strict mode pragma placed.
+    Ex.
+      ```javascript
+      function foo() {
+        "use strict";
+        // code here is strict mode
+        function bar() {
+          // code here is strict mode
+        }
+      }
+      // code here not strict mode
+    Compared
+      "use strict";
+      function foo() {
+        // this code strict
+        function bar() {
+          // this code strict
+        }
+      }
+      // this code strict
+    ```
+  One key difference: disallows implicit auto-global declaration from omitting 'var'
+    Ex.
+      ```javascript
+      function foo() {
+        "use strict"  // turn on strict mode
+        a = 1;            // 'var' missing, ReferenceError
+      }
+      foo();
+      ```
+    Temptation will be to avoid strict mode due to errors, but if errors occur is indication that there are issues in program, not optimal.
+
+  Strict mode will keep code on safer path, make more optimizable, but also future direction of language.
