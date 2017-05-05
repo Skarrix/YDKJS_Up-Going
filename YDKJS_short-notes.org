@@ -138,3 +138,16 @@ Variables
      Setting undeclared var creates global scope variable -> poor practice.
 
      'let' keyword: declares variable usable only within block{}, thus not to higher functions if nested.
+
+
+Conditionals
+  - if/else
+  - switch statement: less verbose altternative for if..else..if
+      ```javascript
+      switch (a) {
+        case 2:
+        case 10:
+          // do something
+          break;
+      ```
+      - "fall through": ommitting 'break' either case runs
