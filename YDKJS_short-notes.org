@@ -155,3 +155,8 @@ Conditionals
 Strict Mode
   Stricter rules. Better for optimization
   Always use.
+
+
+Functions as Values
+  function value to be thought of as any other expression
+  (the function itself is a value)

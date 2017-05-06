@@ -858,3 +858,32 @@ Strict Mode
     Temptation will be to avoid strict mode due to errors, but if errors occur is indication that there are issues in program, not optimal.
 
   Strict mode will keep code on safer path, make more optimizable, but also future direction of language.
+
+
+Functions As Values
+ Funnction primary function of Scope
+  Function Ex.
+    ```javascript
+    function foo() {
+      // ..
+    }
+
+   Where
+    foo is variable in outer enclosing scope, given reference to function being declared.
+    'function' itself is value, just like 42, [1,2,3] etc
+    ```
+  Not only can value(argument) be passed to function, but function itself can be a value that is assigned to variables, or passed to or returned from other functions.
+  Function value to be thought of as expression, much like any other value/expression.
+    Ex.
+      ```javascript
+      var foo = function() {
+        // ..
+      };
+      var x = function bar() {
+        //..
+      };
+     Where
+      1st function expression assigned to 'foo' var is called 'anonymous' bc has no 'name'
+      2nd function expression is 'named' 'bar', even as reference to it also assigned 'x' variable.
+      ```
+    'Named function expressions' generally more preferable but 'anonymous function expressions' still common.
