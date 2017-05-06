@@ -160,3 +160,8 @@ Strict Mode
 Functions as Values
   function value to be thought of as any other expression
   (the function itself is a value)
+
+  IIFE (Immediately invoked function expressions)
+    Ex. (function IIFE(){ .. }) vs function foo() -> foo();
+     Outer () just so JS does not treat like normal function declaration
+   - Often used to declare variables without affecting surrounding code outside IIFE 

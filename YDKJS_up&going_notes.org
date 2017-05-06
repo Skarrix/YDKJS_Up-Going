@@ -887,3 +887,48 @@ Functions As Values
       2nd function expression is 'named' 'bar', even as reference to it also assigned 'x' variable.
       ```
     'Named function expressions' generally more preferable but 'anonymous function expressions' still common.
+
+  Immediately Invoked Function Expressions (IIFEs)
+    Above function executed if added foo() or x()
+    Immediately invoked funnfction expression (IIFE): alternate way to execute function expression
+      Ex.
+        ```javascript
+        (function IIFE(){
+          console.log("Hello!");
+        })();
+        // "Hello!"
+       Where
+        outer (..) surrounding (function IIFE(){..}) function expression is just nuance of JS grammar needed to prevent treatment as normal function declaration.
+        Final () on end of expression is what execures function expression referenced immediately before it.
+        ```
+      Consider similarities of 'foo' and 'IIFE'
+        Ex.
+          ```javascript
+          function foo() {..}
+          // 'foo' function reference expression, then '()' executes it
+          foo();
+          //'IIFE' function expression, then '()' executes it
+          (function IIFE(){..})();
+         Where
+          listing (function IIFE(){..}) before executing () is same as including 'foo' before executing (); in both cases function reference executed with () immediately after it.
+          ```
+      Because IIFE just a function, and functions create variable 'scope', using IIFE often used to declare variables that won't affect surrounding code outside IIFE
+        Ex.
+          ```javascript
+          var a = 42;
+          (function IIFE(){
+            var a = 10;
+            console.log(a);   // 10
+          })();
+          console.log(a);    // 42
+          ```
+      IIFEs can also have return values:
+        Ex.
+          ```javascript
+          var x = (function IIFE(){
+                   return 42;
+          })();
+          x;    // 42
+         Where
+          42 value gets return-ed from IIFE-named function being executed and then assigned to 'x'
+          ```
