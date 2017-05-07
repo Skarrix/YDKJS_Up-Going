@@ -932,3 +932,61 @@ Functions As Values
          Where
           42 value gets return-ed from IIFE-named function being executed and then assigned to 'x'
           ```
+  Closure
+   Way to 'remember' and continue to access a function's scope (variables) even once function has finished running
+    Ex.
+      ```javascript
+      function makeAdder(x) {
+        /// parameter 'x' is inner variable
+        // inner function 'add()' uses 'x', so it has "closure" over it
+        function add(y) {
+          return y + x;
+        };
+        return add;
+      }
+     Where
+      reference to innder add(..) function that gets returned with each call to outer makeAdder(..) is able to remember whatever x value was passed in to makeAdder(..)
+    Ex.
+      // 'plusOne' gets reference to inner 'add(..)' function with closure over 'x' parameter of outer 'makeAdder(..)'
+      var plusOne = makeAdder(1);
+      // 'plusTen' gets reference to inner 'add(..)' function with closure over the 'x' parameter of outer 'makeAdder(..)'
+      var plusTen = makeAdder(10);
+
+      plusOne(3);       // 4 <-- 1 + 3
+      plusOne(41);      // 42 <-- 1 + 41
+      plusTen(13);      // 23 <-- 10 + 13
+     Where
+      1. When calling makeAdder(1), get back reference to inner add(..) that remembers 'x' as 1. function called plusOne(..)
+      2. When calling makeAdder(10), get back another reference to inner add(..) that remembers 'x' as 10. function called plusTen(..)
+      3. When calling plusOne(3), adds 3 (inner 'y') to 1 (remembered 'x'), and 4 is result
+      4. When callling plusTen(13), adds 13 (inner 'y') to 10 (remembered 'x') and 23 is result
+      ```
+
+    Modules
+     - module pattern most common usage of closure.
+     - lets you define private implementation details (variables, functions) hidden from outside world, incl public API that -is- accessible from outside
+      Ex.
+        ```javascript
+        function User(){
+          var username, password;
+          function doLogin(user,pw) {
+            username = user;
+            password = pw;
+            // do the rest of the login work
+          }
+          var publicAPI = {
+            login: doLogin
+          };
+          return publicAPI;
+        }
+        // create a 'User' module instance
+        var fred = User();
+        fred.login("fred", "12Battery34!");
+       Where
+        User() function serves as outer scope holding variables 'username' and 'password', incl inner doLogin() function
+        all private inner details of User module not accessable from outside world.
+        - executing User() creates 'instance' of User module, whole new scope is created, thus new copy of each of inner variables/functions. instance assigned 'fred'. if ran again, new instance entirely seperate from 'fred' would be created.
+        - inner doLogin() function has closure over 'username' and 'password', thus retains access even after User() finishes running.
+         would normally think variables like 'username' and 'password' would have gone away but they do not because there is closure in login() function keeping them alive.
+         is why fred.login(..) can be called, same as calling inner doLogin(..) -- can still access 'username' and 'password' inner variables.
+        ```

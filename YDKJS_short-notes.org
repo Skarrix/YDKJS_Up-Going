@@ -164,4 +164,10 @@ Functions as Values
   IIFE (Immediately invoked function expressions)
     Ex. (function IIFE(){ .. }) vs function foo() -> foo();
      Outer () just so JS does not treat like normal function declaration
-   - Often used to declare variables without affecting surrounding code outside IIFE 
+   - Often used to declare variables without affecting surrounding code outside IIFE
+
+  Closure
+   Way to remember and continue to access a function's scope even after it's finished running
+
+   Modules: most common usage of closure.
+    - lets you define private implementation details (vars, functions) hidden from outside world, incl API that is accesable
