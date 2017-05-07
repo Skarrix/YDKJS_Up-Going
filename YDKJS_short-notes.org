@@ -171,3 +171,9 @@ Functions as Values
 
    Modules: most common usage of closure.
     - lets you define private implementation details (vars, functions) hidden from outside world, incl API that is accesable
+
+
+'this' Identifier
+  function with 'this' reference usually points to an object
+  which object depends on how function was called
+  - 'this' does not refer to function itself, NB!

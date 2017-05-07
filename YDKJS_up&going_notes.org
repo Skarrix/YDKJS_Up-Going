@@ -990,3 +990,35 @@ Functions As Values
          would normally think variables like 'username' and 'password' would have gone away but they do not because there is closure in login() function keeping them alive.
          is why fred.login(..) can be called, same as calling inner doLogin(..) -- can still access 'username' and 'password' inner variables.
         ```
+
+
+'this' Identifier 
+  - not same mechanism as "object-orientated patterns"
+  - if function has 'this' reference inside, that 'this' reference usually points to an 'object'. which object is being pointed to depends on how function was called.
+  - 'this' does not refer to the function itself - common misconception.
+    Ex.
+      ```javascript
+      function foo() {
+        console.log(this.bar);
+      }
+      var bar = "global";
+      var obj1 = {
+        bar: "obj1"
+        foo: foo
+      };
+      var obj2 = {
+        bar: "obj2"
+      };
+      // ----------
+      foo();        // "global"
+      obj1.foo();  // "obj1"
+      foo.call(obj2); // "obj2"
+      new foo();     // undefined
+     Where
+      'this' gets set according to 4 rules
+        1. foo() sets 'this' to global object in non-strict mode -- in strict mode, 'this' would be 'undefined' and would receive error in accessing 'bar' property -- so "global" is value found in this.bar.
+        2. obj1.foo() sets 'this' to 'obj1' object
+        3. foo.call(obj2) sets 'this' to 'onj2' object
+        4. new foo() sets 'this' to brand new empty object
+      ```
+    to understand what 'this' points to, have to examine how function in question was called. It will be one of those 4 ways shown
