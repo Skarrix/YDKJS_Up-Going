@@ -1199,3 +1199,16 @@ Async & Performance
   Writing effective JS = writing code that breaks and constrains barriers of being run dynamically in wide range of browsers and other environments. Requires intricate + detailed planning and effort to take from "it works" to "it works well"
 
   Async & Performance designed to give all tools and skills needed to write reasonable and performant JS code.
+
+ES6 & Beyond
+  JS never going to stop evolving, and rate of evolution increasing rapidly. Will never truly know JS
+
+  title dedicated to both short- and mid-term versions of where language is headed, not just known stuff like ES6, but beyond.
+  Book embraces
+
+  ES6&Beyond starts by dividing concrete stuff from ES6 landscape into several key categories, incl new syntax, new data structures (collections) and new processing capabilities and API's. Cover each of these ES6 features in varying levels of detail incl reviewing details that are touched on in other books of series.
+
+  Exciting ES6 things to look forward to reading: destructuring, default parameter values, symbols, concise methods, computed properties, arrow functions, block scoping, promises, generators, iterators, modules, proxies, weakmaps, etc etc.
+
+  First part of book is roadmap for all the stuff you need to learn to get ready for new and improved JS you'll be writing and exploring over next couple of years.
+  Latter part of book briefly glances at things we can likely expect to see in near future of JS. post-ES6, JS likely to evolve feature by feature rather than version by version, can expect to see near-future things coming sooner than imagined.
