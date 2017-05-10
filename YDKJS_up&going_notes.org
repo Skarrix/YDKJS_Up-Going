@@ -1149,3 +1149,19 @@ Scopes & Closures
   Closure most important concept in JS, but can't understand without understanding scope.
 
   Module pattern: most prevalent code organization pattern in JS, deep understanding should be high priority.
+
+
+this & Object Prototypes
+  persistent mistruth is that 'this' keyword refers to function it appears in.
+
+  'this' keyword dynamically bound based on how functions in question is executed, and there are 4 simple rules to understand and determine 'this' binding.
+
+  Closely related to 'this' keyword is object prototypemechanism, which his look-up chain for properties, similar to how lexical scope vars are found. Wrapped up in this another big miscue about JS: ide of emulating (fake) classes and inheritance (so-called "prototypal")
+
+  Bringing class and inheritence design pattern thinking to JS is bad, because while syntax may trick into thinking there are something like classes present, prototype mechanism is fundamentally opposite this behaviour.
+
+  Issue is whether to ifnore mismatch and pretend you're implementing "inheritance" or whether is more appropriate to learn and embrace how object prototype system works. latter is named "behaviour delegation"
+
+  More than syntactic preference. Delegation different and more powerful design pattern that replaces need to design with classes and inheritance. <-- not popular opinion, but true.
+
+  Delegation vs inheritance claims comes from desire to see true capability of language properly leveraged, confusion wiped away.
