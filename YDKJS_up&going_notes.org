@@ -1053,3 +1053,54 @@ Prototypes
       'a' property does not actually exist on 'bar' object, but because 'bar' prototype-linked to 'foo', JS auto fallbacks to looking for 'a'  on 'foo' object.
     - Most common use of feature is emulate/fake "class" mechanism with "inheritance"
     - More natural way of applying prototypes is pattern called "behaviour delegation", where linked objects intentionally designed to be able to 'delegate' from one to other for parts of needed behaviour.
+
+
+Old & New
+  Polyfilling & Transpiling: techniques for dealing with legacy browsers or non-support of newer JS technology.
+
+  Polyfilling
+    Invented term that means taking definition of newer feature and producing piece of code that is equivalent in behaviour but able to run on older JS environment.
+      Ex. ES6 defines utility called 'Number.isNaN(..)' to provide accurate check for NaN values, deprecating original isNaN(..) utility. Easily polyfilled by:
+        ```javascript
+        if (!Number.isNaN) {
+          Number.isNaN = function isNaN(x) {
+            return x !== x;
+          };
+        }
+       Where
+        if statement guards against applying polyfill definition in ES6 browsers where it already exists. If not present, we define Number.isNaN(..)
+        ```
+      This check we do takes advantage of quirk with NaN values, that they're only value in entire language that is not equal to itself. aka NaN value 'x !== x' is 'true'
+
+      Not all new features fully polyfillable, some small deviations. Should be careful impplementing polyfill yourself, to make sure specifications are adhered to strict as possible. Or use vetted source.
+
+  Transpiling
+    No way to polyfill new syntax added to language. get error as unrecognized/invalid
+    Better option to use tool to convert newer code into older code equivalent, aka 'transpiling'. means transforming+Compiling
+    Source code essentually authored in new syntax, but what is deployed to browser is transpiled code in old syntax form.
+    Transpiler typically inserted into build process, similar to code linter or minifier.
+
+    Why transpile and not write older code directly?
+      - new syntax designed to make code more readable and maintainable. older versions more convoluted.
+      - If transpiling for old but serve new syntax for newest browsers allows taking advantage of browser performance optimization with new syntax. browser makers also have more real-world code to test implementation + optimization on
+      - Using new syntax earlier allows testing more robustly in real world, providing earlier feedback to JS committee. If issues found early, can be changed/fixed before language design mistakes become permanent.
+
+    Ex. "default parameter values"
+      ```javascript
+      function foo(a = 2) {
+        console.log( a );
+      }
+      foo();     // 2
+      foo(42);  // 42
+     Transpiler for older:
+      function foo() {
+        var a=argumens[0] !== (void 0) ? arguments[0] : 2;
+        console.log(a);
+      }
+     Where
+      it checks to see if arguments[0] value is void 0 (aka 'undefined'), and provides default 2 value, otherwise assigns whatever is passed.
+      In addition to being able to use nicer syntax in older browsers, looking at transpiled code explains intended behaviour more clearly.
+      'undefined' only value that cant get explicitly passed in for default-value parameter, but transpiled code makes this clear.
+      ```
+    transpilers should be thought of as standard part of JS development ecosystem and process. JS will always evolve, faster and faster. syntax added every few months
+    If transpiler used by default, always able to make switch to newer syntax whenever useful, rather than awaiting browsers.
