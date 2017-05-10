@@ -1212,3 +1212,8 @@ ES6 & Beyond
 
   First part of book is roadmap for all the stuff you need to learn to get ready for new and improved JS you'll be writing and exploring over next couple of years.
   Latter part of book briefly glances at things we can likely expect to see in near future of JS. post-ES6, JS likely to evolve feature by feature rather than version by version, can expect to see near-future things coming sooner than imagined.
+
+Review
+  YDKJS series dedicated to proposition that all JS devs can and should learn all parts of language.
+
+  Each important area of focus in language and dedicate short but dense book to fully explore all parts of it that you thought you knew but didn't.
