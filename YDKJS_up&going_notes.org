@@ -1111,6 +1111,7 @@ Non-JavaScript
   Good chunk of what is written in code not directly controlled by JS
     Ex. DOM API
       ```javascript
+      ```
       var el = document.getElementByID("foo");
      Where
       'document' variable exists as global variable when code running in browser.
@@ -1118,7 +1119,7 @@ Non-JavaScript
       Takes form of something that looks like normal JS 'object', but is not.
       Is special 'object', called "host objet"
       getElementById(..) method on 'document' looks like normal JS function, but is thinly exposed interface to built-in method provided by the DOM of browser. DOM behaviour implemented in C/C++ typically.
-      ```
+
 
     Ex. 2. input/output (I/O)
       alert(..) pops up message box in user window.
@@ -1131,3 +1132,20 @@ Non-JavaScript
 
 Review
   First step to learning JS programming is get basic understanding of core mechanisms, ex. values, types, function closures, this, prototypes
+
+
+-------------------------------------------------------------------
+
+# CHAPTER 3
+
+Scopes & Closures
+  Debunks that JS is 'interpreted language' and thus not compiled
+  JS compiles code right before (sometimes during) execution.
+
+  Must understand how JS compiler approaches code to understand how it deals with variable and function declarations.
+  JS variable scope management: 'hoisting'
+
+  Understanding "lexical scope" critical for understanding closure on last chapter of book.
+  Closure most important concept in JS, but can't understand without understanding scope.
+
+  Module pattern: most prevalent code organization pattern in JS, deep understanding should be high priority.
