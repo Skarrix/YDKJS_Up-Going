@@ -1127,3 +1127,7 @@ Non-JavaScript
     Ex. 3 console.log(..)
       browser provides such mechanisms and hooks up to dev tools
     This book focuses on JS language, thus not much coverage of non-JS JS mechanisms, but be aware of them.
+
+
+Review
+  First step to learning JS programming is get basic understanding of core mechanisms, ex. values, types, function closures, this, prototypes
