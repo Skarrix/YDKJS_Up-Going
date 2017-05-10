@@ -1165,3 +1165,37 @@ this & Object Prototypes
   More than syntactic preference. Delegation different and more powerful design pattern that replaces need to design with classes and inheritance. <-- not popular opinion, but true.
 
   Delegation vs inheritance claims comes from desire to see true capability of language properly leveraged, confusion wiped away.
+
+
+Types & grammar
+  Tackled type coercion. Lots of confusion around implicit coercion, often seen as bad and to be avoided, even called 'flaw'.
+
+  After building understanding of how types and values work ch1-3, Ch4 explains how coercion works. Much of it makes sense if understood.
+
+  Coercion not only sensible and learnable but very useful and underestimated tool that -should- be used. Not only works, but makes code better.
+
+
+Async & Performance
+  First 3 titles focuses on core mechanics of language, fourth branches out into cover patterns on top of language machanics for managing asynchronous programming.
+  Asynchrony not only critical to performance but incresingly critical factor in writability and maintainability.
+
+  Starts with clearing up terminology and concept confusion around 'async', 'parallel', 'concurrent' + explains how it does and does not apply to JS.
+
+  Examine callbacks as primary method of asynchrony, but show it is isufficient for modern demands of async programming.
+  Identify 2 major deficiencies of callbacks-only coding: Inversion of Control (IoC) trust loss and lack of linear reason-ability.
+  To address, ES6 introduces 2 new mechanisms (and patterns): promises and generators
+
+  Promises: time-dependent wrapper around "future value", lets you reason about and compose regardless of if value is ready yet or not. Efficiently solves IoC trust issues by routing callbacks through trustable and compsable promise mechanism
+
+  Generators: time-independent wrapper around "future value", where generator can be paused at 'yield' points and resumed asynchronously later. Pause-and-resume capability enables synchronous, sequential-looking code in generator to be processed asynchronously behind scenes. Addresses non-linear, non-local-jump confusions of calllbacks and thereby make asynchronous code sunc-looking so as to be more reason-able.
+
+  Combination of promises and generators that yields most effective asynchronous coding pattern to date in JS. Much future sophistication of asynchrony coming in ES7+ will be built on this foundation. Better get comfortable.
+
+  Promises and generators about expressing patterns that let programs run more concurrenly and thus get more processing accomplished in shorter  period. JS also has many more facets of perf. opt. worth exploring.
+
+  Ch5 delves into topics like program parallelism and Web Workers and data parallelism with SIMD, as well as low-level optimization techniques like ASM.js.
+  Ch6 takes look at perf. opt. from perspective of proper benchmarking techniques, incl what kinds of performance to worry about or ignore.
+
+  Writing effective JS = writing code that breaks and constrains barriers of being run dynamically in wide range of browsers and other environments. Requires intricate + detailed planning and effort to take from "it works" to "it works well"
+
+  Async & Performance designed to give all tools and skills needed to write reasonable and performant JS code.
