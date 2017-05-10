@@ -185,3 +185,20 @@ Prototypes
   - can emulate/fake class mechanism with inheritance
   - Behaviour delegation: linked objects intentionally designed to be able to 'delegate' from one to other for parts of needed behaviour.
   - Illustrated best with utility Object.create(..)
+
+
+Old & New
+  Polyfilling + Transpiling: techniques to bring newer JS technology to non-supportive platforms.
+
+  - Polyfilling: Producing equivalent code to mimick new feature
+    - not all new features polyfillable.
+    - adhere strictly to specifications when self-polyfilling
+    - ideally use vetted source: https://github.com/es-shims/es6-shim
+
+  - Transpiling: tool to convert new code to old
+    - inserted into build process
+    - should be standard use.
+    Why use?
+      - more readable/maintainable
+      - better performance for new browsers 
+      - more use = more/better/quicker fixes
