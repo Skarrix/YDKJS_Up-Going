@@ -177,3 +177,11 @@ Functions as Values
   function with 'this' reference usually points to an object
   which object depends on how function was called
   - 'this' does not refer to function itself, NB!
+
+
+Prototypes
+  - Js automatically uses object's internal prototype reference to fall back property if it does not exist
+  Uses
+  - can emulate/fake class mechanism with inheritance
+  - Behaviour delegation: linked objects intentionally designed to be able to 'delegate' from one to other for parts of needed behaviour.
+  - Illustrated best with utility Object.create(..)

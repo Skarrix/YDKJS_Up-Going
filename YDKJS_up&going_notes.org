@@ -992,7 +992,7 @@ Functions As Values
         ```
 
 
-'this' Identifier 
+'this' Identifier
   - not same mechanism as "object-orientated patterns"
   - if function has 'this' reference inside, that 'this' reference usually points to an 'object'. which object is being pointed to depends on how function was called.
   - 'this' does not refer to the function itself - common misconception.
@@ -1022,3 +1022,34 @@ Functions As Values
         4. new foo() sets 'this' to brand new empty object
       ```
     to understand what 'this' points to, have to examine how function in question was called. It will be one of those 4 ways shown
+```
+
+Prototypes
+  - When referencing property on object that does not exist, JS automatically uses object's internal prototype reference to find another object to look for property on. aka fallback if property is missing
+  - Internal prototype reference linkage from one object to its fallback happens at time object is created.
+    Ex. Illustrated best with utility Object.create(..)
+      ```javascript
+      var foo = {
+        a: 42
+      };
+      //create 'bar' and link to 'foo'
+      var bar = Object.create(foo);
+      bar.b = "hello world";
+      bar.b;         // "hello world"
+      bar.a;        // 42 <-- delegated to 'foo'
+      ```
+    'foo' and 'bar' objects Illustrated
+     foo
+      +------+
+      | a:42 |
+      +------+
+         ^
+         | prototype link
+     bar |
+      +-----------------+
+      | b:"hello world" |
+      +-----------------+
+     Where
+      'a' property does not actually exist on 'bar' object, but because 'bar' prototype-linked to 'foo', JS auto fallbacks to looking for 'a'  on 'foo' object.
+    - Most common use of feature is emulate/fake "class" mechanism with "inheritance"
+    - More natural way of applying prototypes is pattern called "behaviour delegation", where linked objects intentionally designed to be able to 'delegate' from one to other for parts of needed behaviour.
