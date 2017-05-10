@@ -208,3 +208,38 @@ Non-JavaScript
   Thus, much code not directly run by JS but rather implemented by C/C++ etc. JS just makes call to browser internals, which handles execution/drawing
     Ex.
      document.getElementByID, alert(..), console.log(..)
+
+
+
+#Chapter 3
+
+  Scope & Closures
+    JS code compiled right before (sometimes during) execution
+    Understanding compilers approach and how it deals with functions and declarations.
+    Hoisting
+    Lexical Scope
+    Closure and module pattern
+
+this & Object Prototypes
+  clearing up misunderstandings around 'this' keyword
+  Object prototype mechanism
+  Behaviour Delegation vs fake classes and inheritance
+
+Types & Grammar
+  Understanding Type Coercion
+  Ch1-3 understanding how types and values work
+  Ch4 explains coercion
+
+Async & Performance
+  Clears up terminology
+  Examines callbacks for asynchrony and how it falls short
+  Two new mechanisms, promises and generators
+  combining both for best asynch coding pattern
+  Ch5 more optimization techniques
+
+ES6 & Beyond
+  Short &  mid-term vision of where language is headed.
+  Starts with concrete stuff from ES6 landscape
+  first part roadmap for everything you need to learn to get ready for improved JS
+  Exciting ES6 things to look forward to
+  Latter looks at things we can expect in near future.
