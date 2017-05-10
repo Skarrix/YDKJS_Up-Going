@@ -200,5 +200,11 @@ Old & New
     - should be standard use.
     Why use?
       - more readable/maintainable
-      - better performance for new browsers 
+      - better performance for new browsers
       - more use = more/better/quicker fixes
+
+Non-JavaScript
+  Most JS written to interact with browsers and similar environments
+  Thus, much code not directly run by JS but rather implemented by C/C++ etc. JS just makes call to browser internals, which handles execution/drawing
+    Ex.
+     document.getElementByID, alert(..), console.log(..)

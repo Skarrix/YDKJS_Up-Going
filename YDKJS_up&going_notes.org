@@ -1104,3 +1104,26 @@ Old & New
       ```
     transpilers should be thought of as standard part of JS development ecosystem and process. JS will always evolve, faster and faster. syntax added every few months
     If transpiler used by default, always able to make switch to newer syntax whenever useful, rather than awaiting browsers.
+
+
+Non-JavaScript
+  Most JS written to run + interact with environments like browsers
+  Good chunk of what is written in code not directly controlled by JS
+    Ex. DOM API
+      ```javascript
+      var el = document.getElementByID("foo");
+     Where
+      'document' variable exists as global variable when code running in browser.
+      Not provided by JS engine, nor controlled by JS specification.
+      Takes form of something that looks like normal JS 'object', but is not.
+      Is special 'object', called "host objet"
+      getElementById(..) method on 'document' looks like normal JS function, but is thinly exposed interface to built-in method provided by the DOM of browser. DOM behaviour implemented in C/C++ typically.
+      ```
+
+    Ex. 2. input/output (I/O)
+      alert(..) pops up message box in user window.
+      alert(..) provided to JS program by browser, not by JS engine itself.
+      Call made sends message to browser internals and it handles drawing and displaying message box.
+    Ex. 3 console.log(..)
+      browser provides such mechanisms and hooks up to dev tools
+    This book focuses on JS language, thus not much coverage of non-JS JS mechanisms, but be aware of them.
